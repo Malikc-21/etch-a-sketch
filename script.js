@@ -1,5 +1,37 @@
+function destroy(){
+    const custom = document.querySelector('#custom')
 
-let cus = false
+    const crutch = document.querySelector('#container')
+
+    const child = crutch.querySelectorAll('#hi')
+
+    child.forEach((child) => {
+        crutch.removeChild(child)
+        })
+}
+
+
+
+
+function create() {
+    const color = document.querySelectorAll('#hi')
+    
+    
+    color.forEach((div) => {
+        div.addEventListener('mouseover', () => {
+            div.style.cssText = 'width: 40px; height: 40px; margin: 0px; border: 4px solid black; background: black;'
+        })
+    })
+    
+    const button = document.querySelector('button')
+    
+    button.addEventListener ('click', () => {
+        color.forEach((div) => {
+                div.style.cssText = 'width: 40px; height: 40px; margin: 0px; border: 4px solid black; background: white;'
+            })
+        })
+    
+    }
 
 
 for(i = 0; i < 256; i ++) {
@@ -9,54 +41,52 @@ for(i = 0; i < 256; i ++) {
     hello.style.cssText = 'width: 40px; height: 40px; margin: 0px; border: 4px solid black;'
     //document.querySelector('#container');
     container.appendChild(hello);
+    create()
 }
 
 
-
-const color = document.querySelectorAll('#hi')
-
-
-color.forEach((div) => {
-    div.addEventListener('mouseover', () => {
-        div.style.cssText = 'width: 40px; height: 40px; margin: 0px; border: 4px solid black; background: black;'
-    })
-})
-
-const button = document.querySelector('button')
-
-button.addEventListener ('click', () => {
-    color.forEach((div) => {
-            div.style.cssText = 'width: 40px; height: 40px; margin: 0px; border: 4px solid black; background: white;'
-        })
-    })
 
 
 
 
 custom.addEventListener ('click', () => {
 
-    const custom = document.querySelector('#custom')
+    destroy()
 
-const crutch = document.querySelector('#container')
+    let mySize = prompt()
 
-const child = crutch.querySelectorAll('#hi')
+    for(i = 0; i < mySize * mySize; i ++) {
+        const container = document.querySelector('#container')
+        const hello = document.createElement('div');
+        hello.setAttribute('id', 'hi')
+        hello.style.cssText = 'width: 40px; height: 40px; margin: 0px; border: 4px solid black;'
+        container.appendChild(hello);
+        }
 
-    child.forEach((child) => {
-        crutch.removeChild(child)
+    create()
+
+
+    
+    
+})
+
+const reset = document.querySelector('#reset')
+
+        reset.addEventListener('click', () => {
+            destroy()
+
+            for(i = 0; i < 256; i ++) {
+                const container = document.querySelector('#container')
+                const hello = document.createElement('div');
+                hello.setAttribute('id', 'hi')
+                hello.style.cssText = 'width: 40px; height: 40px; margin: 0px; border: 4px solid black;'
+                //document.querySelector('#container');
+                container.appendChild(hello);
+                create()
+            }
         })
 
-        let mySize = prompt()
 
-        for(i = 0; i < mySize * mySize; i ++) {
-            const container = document.querySelector('#container')
-            const hello = document.createElement('div');
-            hello.setAttribute('id', 'hi')
-            hello.style.cssText = 'width: 40px; height: 40px; margin: 0px; border: 4px solid black;'
-            //document.querySelector('#container');
-            container.appendChild(hello);
-        }
-    
-    })
     
     
 

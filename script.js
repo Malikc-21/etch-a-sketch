@@ -1,3 +1,5 @@
+
+
 function destroy(){
     const custom = document.querySelector('#custom')
 
@@ -13,35 +15,29 @@ function destroy(){
 
 
 
-function create() {
+function create(num) {
     const color = document.querySelectorAll('#hi')
     
     
     color.forEach((div) => {
         div.addEventListener('mouseover', () => {
-            div.style.cssText = 'width: 40px; height: 40px; margin: 0px; border: 4px solid black; background: black;'
+            div.style.cssText ='margin: 0px; border: 1px solid black; background: black;'
+            div.style.width = (640/num) - 2 + 'px'
+            div.style.height = (640/num) - 2 + 'px'
         })
     })
-    
-    const button = document.querySelector('button')
-    
-    button.addEventListener ('click', () => {
-        color.forEach((div) => {
-                div.style.cssText = 'width: 40px; height: 40px; margin: 0px; border: 4px solid black; background: white;'
-            })
-        })
-    
-    }
+}
 
 
 for(i = 0; i < 256; i ++) {
     const container = document.querySelector('#container')
     const hello = document.createElement('div');
     hello.setAttribute('id', 'hi')
-    hello.style.cssText = 'width: 40px; height: 40px; margin: 0px; border: 4px solid black;'
-    //document.querySelector('#container');
+    hello.style.cssText = 'margin: 0px; border: 1px solid black;'
+    hello.style.width = (640/16) - 2 + 'px'
+    hello.style.height = (640/16) - 2 + 'px'
     container.appendChild(hello);
-    create()
+    create(16)
 }
 
 
@@ -59,11 +55,13 @@ custom.addEventListener ('click', () => {
         const container = document.querySelector('#container')
         const hello = document.createElement('div');
         hello.setAttribute('id', 'hi')
-        hello.style.cssText = 'width: 40px; height: 40px; margin: 0px; border: 4px solid black;'
+        hello.style.cssText = 'margin: 0px; border: 1px solid black;'
+        hello.style.width = (640/mySize) - 2 + 'px'
+        hello.style.height = (640/mySize) - 2 + 'px'
         container.appendChild(hello);
         }
 
-    create()
+    create(mySize)
 
 
     
@@ -79,12 +77,14 @@ const reset = document.querySelector('#reset')
                 const container = document.querySelector('#container')
                 const hello = document.createElement('div');
                 hello.setAttribute('id', 'hi')
-                hello.style.cssText = 'width: 40px; height: 40px; margin: 0px; border: 4px solid black;'
-                //document.querySelector('#container');
+                hello.style.cssText = 'margin: 0px; border: 1px solid black;'
+                hello.style.width = (640/16) - 2 + 'px'
+                hello.style.height = (640/16) - 2 + 'px'
                 container.appendChild(hello);
-                create()
+                create(16)
             }
         })
+
 
 
     

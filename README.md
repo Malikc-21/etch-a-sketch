@@ -1,1 +1,1 @@
-Etch a sketch project
+Interactive etch-a-sketch like game built with javascript
